@@ -1,9 +1,11 @@
 import React from 'react';
 import Select from 'react-select';
 import '../Styles/Navbar.css';
+import sourceCodes from './Sourcecodes'
  
 const Navbar = ({userLang, setUserLang, userTheme,
-                setUserTheme, fontSize, setFontSize}) => {
+                setUserTheme, fontSize, setFontSize, sourceCode,
+            setSourceCode}) => {
     const languages = [
         { value: "c", label: "C" },
         { value: "cpp", label: "C++" },
@@ -23,10 +25,13 @@ const Navbar = ({userLang, setUserLang, userTheme,
             <Select options={themes} value={userTheme}
                     onChange={(e) => setUserTheme(e.value)}
                     placeholder={userTheme} />
+            <Select options={sourceCodes} value={sourceCode}
+                    onChange={(e) => setSourceCode(e.value)}
+                    placeholder={sourceCode} />
             <label>Font Size</label>
             <input type="range" min="18" max="30"
                    value={fontSize} step="2"
-                   onChange={(e) => { setFontSize(e.target.value)}}/>
+                   onChange={(e) => { setFontSize(e.target.value)}} />
         </div>
     )
 }

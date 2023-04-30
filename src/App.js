@@ -28,6 +28,9 @@ function App() {
   // Loading state variable to show spinner
   // while fetching data
   const [loading, setLoading] = useState(false);
+
+  // adding source codes to the editor
+  const [sourceCode, setSourceCode] = useState("hello");
    
   const options = {
     fontSize: fontSize
@@ -62,6 +65,7 @@ function App() {
         userLang={userLang} setUserLang={setUserLang}
         userTheme={userTheme} setUserTheme={setUserTheme}
         fontSize={fontSize} setFontSize={setFontSize}
+        sourceCode={sourceCode} setSourceCode={setSourceCode}
       />
       <div className="main">
         <div className="left-container">
