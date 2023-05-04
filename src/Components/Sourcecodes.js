@@ -1,6 +1,6 @@
 const sourceCodes = [
-    {value: `print("hello")`, label: "hello"},
-    {value: `print("hi")`, label: "hi"}
+    {value: `hello`, label: "Hello"},
+    {value: `hi`, label: "Hi"}
 ]
 
 export default sourceCodes;

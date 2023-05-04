@@ -4,6 +4,8 @@ import Editor from "@monaco-editor/react";
 import Navbar from './Components/Navbar';
 import Axios from 'axios';
 import spinner from './spinner.gif';
+
+import Codelibrary from './Components/Codelibrary';
  
 function App() {
  
@@ -38,6 +40,7 @@ function App() {
  
   // Function to call the compile endpoint
   function compile() {
+    console.log(sourceCode);
     setLoading(true);
     if (userCode === ``) {
       return
@@ -76,7 +79,8 @@ function App() {
             theme={userTheme}
             language={userLang}
             defaultLanguage="python"
-            defaultValue="# Enter your code here"
+            //defaultValue="# Enter your code here"
+            defaultValue={Codelibrary[sourceCode]}
             onChange={(value) => { setUserCode(value) }}
           />
           <button className="run-btn" onClick={() => compile()}>
