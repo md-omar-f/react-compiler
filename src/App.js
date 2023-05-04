@@ -37,6 +37,16 @@ function App() {
   const options = {
     fontSize: fontSize
   }
+
+  var defaultCode = Codelibrary[sourceCode];
+
+  // Reload function after selecting a specific algorithm
+  function reload() {
+    setTimeout(() => {
+        defaultCode = Codelibrary[sourceCode];
+        console.log(`redered for defaultCode: ${defaultCode}`);
+    }, 1000);
+  }
  
   // Function to call the compile endpoint
   function compile() {
@@ -80,9 +90,12 @@ function App() {
             language={userLang}
             defaultLanguage="python"
             //defaultValue="# Enter your code here"
-            defaultValue={Codelibrary[sourceCode]}
+            defaultValue={defaultCode}
             onChange={(value) => { setUserCode(value) }}
           />
+          <button className="reload-btn" onClick={() => reload()}>
+             Reload
+          </button>
           <button className="run-btn" onClick={() => compile()}>
              Run
           </button>
