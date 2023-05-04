@@ -32,7 +32,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   // adding source codes to the editor
-  const [sourceCode, setSourceCode] = useState("hello");
+  const [sourceCode, setSourceCode] = useState("caesar-cipher");
    
   const options = {
     fontSize: fontSize
@@ -82,7 +82,7 @@ function App() {
       />
       <div className="main">
         <div className="left-container">
-          <Editor
+            <Editor
             options={options}
             height="calc(100vh - 50px)"
             width="100%"
