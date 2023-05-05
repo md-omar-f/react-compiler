@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import Editor from "@monaco-editor/react";
 import Navbar from './Components/Navbar';
@@ -33,10 +33,15 @@ function App() {
 
   // adding source codes to the editor
   const [sourceCode, setSourceCode] = useState("caesar-cipher");
+
+  //reload state
+
+  const [showEditor, setShowEditor] = useState(false);
    
   const options = {
     fontSize: fontSize
   }
+
 
   var defaultCode = Codelibrary[sourceCode];
 
@@ -82,7 +87,7 @@ function App() {
       />
       <div className="main">
         <div className="left-container">
-            <Editor
+            {showEditor && <Editor
             options={options}
             height="calc(100vh - 50px)"
             width="100%"
@@ -92,12 +97,12 @@ function App() {
             //defaultValue="# Enter your code here"
             defaultValue={defaultCode}
             onChange={(value) => { setUserCode(value) }}
-          />
-          <button className="reload-btn" onClick={() => reload()}>
+          />}
+          <button className="reload-btn" onClick={() => setShowEditor(!showEditor)}>
              Reload
           </button>
           <button className="run-btn" onClick={() => compile()}>
-             Run
+             Encrypt
           </button>
         </div>
         <div className="right-container">
