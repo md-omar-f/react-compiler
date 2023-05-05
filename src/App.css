@@ -81,7 +81,7 @@
   #code-inp:focus{
     outline: none;
   }
-  .run-btn{
+  .encrypt-btn{
     position: absolute;
     bottom: 10px;
     right: 18px;
@@ -96,10 +96,10 @@
     cursor: pointer;
   }
 
-  .reload-btn {
+  .decrypt-btn {
     position: absolute;
     bottom: 10px;
-    right: 120px;
+    left: 18px;
     width: 95px;
     height: 40px;
     font-size: 22px;
@@ -110,7 +110,22 @@
     transition: 0.3s;
     cursor: pointer;
   }
-  .run-btn:active{
+
+  .reload-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 140px;
+    width: 95px;
+    height: 40px;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #afec3f;
+    border: none;
+    border-radius: 4px;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .encrypt-btn:active{
     background-color: #6e9427;
   }
 

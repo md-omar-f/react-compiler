@@ -34,6 +34,8 @@ function App() {
   // adding source codes to the editor
   const [sourceCode, setSourceCode] = useState("caesar-cipher");
 
+  //const [userCode, setUserCode] = useState(Codelibrary[sourceCode]);
+
   //reload state
 
   const [showEditor, setShowEditor] = useState(false);
@@ -41,9 +43,9 @@ function App() {
   const options = {
     fontSize: fontSize
   }
-
-
+  
   var defaultCode = Codelibrary[sourceCode];
+  
  
   // Function to call the compile endpoint
   function compile() {
@@ -52,7 +54,6 @@ function App() {
     if (userCode === ``) {
       return
     }
- 
     // Post request to compile endpoint
     Axios.post(`http://localhost:8000/compile`, {
       code: userCode,
@@ -93,8 +94,11 @@ function App() {
           <button className="reload-btn" onClick={() => setShowEditor(!showEditor)}>
              Reload
           </button>
-          <button className="run-btn" onClick={() => compile()}>
+          <button className="encrypt-btn" onClick={() => compile()}>
              Encrypt
+          </button>
+          <button className="decrypt-btn" onClick={() => compile()}>
+             Decrypt
           </button>
         </div>
         <div className="right-container">
