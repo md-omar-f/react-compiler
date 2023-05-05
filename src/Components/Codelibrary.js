@@ -17,8 +17,8 @@ const Codelibrary = {
     return result
  
 #check the above function
-text = "ATTACKATONCE"
-s = 4
+text = input()
+s = 3
 print ("Text  : " + text)
 print ("Shift : " + str(s))
 print ("Cipher: " + encrypt(text,s))`,

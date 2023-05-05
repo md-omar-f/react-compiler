@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './App.css';
 import Editor from "@monaco-editor/react";
 import Navbar from './Components/Navbar';
@@ -44,14 +44,6 @@ function App() {
 
 
   var defaultCode = Codelibrary[sourceCode];
-
-  // Reload function after selecting a specific algorithm
-  function reload() {
-    setTimeout(() => {
-        defaultCode = Codelibrary[sourceCode];
-        console.log(`redered for defaultCode: ${defaultCode}`);
-    }, 1000);
-  }
  
   // Function to call the compile endpoint
   function compile() {
