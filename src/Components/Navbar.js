@@ -32,6 +32,7 @@ const Navbar = ({userLang, setUserLang, userTheme,
             <input type="range" min="18" max="30"
                    value={fontSize} step="2"
                    onChange={(e) => { setFontSize(e.target.value)}} />
+            <button></button>
         </div>
     )
 }

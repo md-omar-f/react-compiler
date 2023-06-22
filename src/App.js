@@ -10,7 +10,7 @@ import Codelibrary from './Components/Codelibrary';
 function App() {
  
   // State variable to set users source code
-  const [userCode, setUserCode] = useState(``);
+  //const [userCode, setUserCode] = useState(``);
  
   // State variable to set editors default language
   const [userLang, setUserLang] = useState("python");
@@ -34,11 +34,11 @@ function App() {
   // adding source codes to the editor
   const [sourceCode, setSourceCode] = useState("caesar-cipher");
 
-  //const [userCode, setUserCode] = useState(Codelibrary[sourceCode]);
+  const [userCode, setUserCode] = useState(Codelibrary[sourceCode]);
 
   //reload state
 
-  const [showEditor, setShowEditor] = useState(false);
+  const [showEditor, setShowEditor] = useState(true);
    
   const options = {
     fontSize: fontSize
@@ -63,6 +63,8 @@ function App() {
     }).then(() => {
       setLoading(false);
     })
+
+    console.log("successfully requested by axios");
   }
  
   // Function to clear the output screen
@@ -92,7 +94,7 @@ function App() {
             onChange={(value) => { setUserCode(value) }}
           />}
           <button className="reload-btn" onClick={() => setShowEditor(!showEditor)}>
-             Reload
+             Load
           </button>
           <button className="encrypt-btn" onClick={() => compile()}>
              Encrypt

@@ -13,6 +13,8 @@ app.post("/compile", (req, res) => {
     let code = req.body.code;
     let language = req.body.language;
     let input = req.body.input;
+
+    //console.log("successfully requested api");
  
     if (language === "python") {
         language="py"
@@ -24,11 +26,11 @@ app.post("/compile", (req, res) => {
             "input": input
         });
  
-    // let data = ({
+    // let data = {
     //     "code": code,
-    //     //"language": language,
+    //     "language": language,
     //     "input": input
-    // });
+    // };
     let config = {
         method: 'post',
         url: 'https://api.codex.jaagrav.in',
@@ -39,6 +41,18 @@ app.post("/compile", (req, res) => {
         },
         data: data
     };
+
+    // let config = {
+    //     method: 'post',
+    //     url: 'https://judge0-ce.p.rapidapi.com/submissions',
+    //     params: { base64_encoded: "true", fields: "*" },
+    //     headers: {
+    //         'X-RapidAPI-Key': '0aa8991588msh298ffca364ebd56p1972a4jsn4d14adcec561',
+    //         'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com'
+    //     },
+    //     data: data
+    // };
+
     //calling the code compilation API
     Axios(config)
         .then((response)=>{

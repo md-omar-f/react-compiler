@@ -67,7 +67,7 @@
     white-space: pre-wrap;
   }
   h4{
-    color: #afec3f;
+    color: #1f65e6;
   }
   #code-inp{
     box-sizing: border-box;
@@ -89,7 +89,7 @@
     height: 40px;
     font-size: 22px;
     font-weight: bold;
-    background-color: #afec3f;
+    background-color: #1f65e6;
     border: none;
     border-radius: 4px;
     transition: 0.3s;
@@ -104,7 +104,7 @@
     height: 40px;
     font-size: 22px;
     font-weight: bold;
-    background-color: #afec3f;
+    background-color: #1f65e6;
     border: none;
     border-radius: 4px;
     transition: 0.3s;
@@ -119,16 +119,20 @@
     height: 40px;
     font-size: 22px;
     font-weight: bold;
-    background-color: #afec3f;
+    background-color: #1f65e6;
     border: none;
     border-radius: 4px;
     transition: 0.3s;
     cursor: pointer;
   }
   .encrypt-btn:active{
-    background-color: #6e9427;
+    background-color: #1f65e6;
   }
 
   .reload-btn:active{
-    background-color: #6e9427;
+    background-color: #1f65e6;
+  }
+
+  .reload-btn, .decrypt-btn, .encrypt-btn {
+    color:white;
   }
